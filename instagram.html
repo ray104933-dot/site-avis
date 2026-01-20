@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rêve de Coton (@revedecoton) • Photos et vidéos Instagram</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #fafafa;
+            --text-color: #262626;
+            --border-color: #dbdbdb;
+            --blue-btn: #0095f6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barre de navigation simplifiée (Haut) */
+        .nav-bar {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-bar h1 {
+            font-size: 16px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* Conteneur Principal */
+        .container {
+            max-width: 935px; /* Largeur standard Instagram */
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* En-tête du profil */
+        .profile-header {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .profile-img-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin-right: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            padding: 2px; /* Petit espace blanc */
+        }
+
+        .profile-info {
+            flex: 2;
+        }
+
+        .username-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .username {
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+        .verified-badge {
+            color: var(--blue-btn);
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        .btn-follow {
+            background-color: var(--blue-btn);
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Statistiques */
+        .stats-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            font-size: 16px;
+        }
+
+        .stats-list li {
+            margin-right: 40px;
+        }
+
+        .stats-list strong {
+            font-weight: 600;
+        }
+
+        /* Description / Bio */
+        .bio h2 {
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+        }
+
+        .bio-text {
+            font-size: 16px;
+            line-height: 1.5;
+            white-space: pre-wrap; /* Garde les sauts de ligne */
+        }
+
+        .website-link {
+            color: #00376b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Grille des photos */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+            gap: 4px; /* Petit espace entre photos comme sur l'app */
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Astuce pour créer des carrés parfaits */
+            overflow: hidden;
+            background-color: #efefef;
+            cursor: pointer;
+        }
+
+        .gallery-item img, 
+        .gallery-item video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Remplit le carré sans déformer */
+        }
+
+        /* Icône vidéo sur les vidéos */
+        .video-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 16px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        /* RESPONSIVE (Mobile) */
+        @media (max-width: 735px) {
+            .container { padding: 0; }
+            
+            .profile-header {
+                padding: 15px;
+                margin-bottom: 10px;
+            }
+
+            .profile-img {
+                width: 77px;
+                height: 77px;
+            }
+
+            .profile-img-container { margin-right: 15px; flex: 0; }
+            
+            .username { font-size: 20px; }
+            
+            /* Cacher les stats en haut sur mobile et les mettre en bas comme l'app */
+            .stats-list {
+                border-top: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                justify-content: space-around;
+                padding: 10px 0;
+                margin-top: 15px;
+            }
+            .stats-list li { margin: 0; font-size: 14px; text-align: center; display: flex; flex-direction: column;}
+            
+            .bio { padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <h1>Rêve de coton <i class="fa-solid fa-chevron-down" style="font-size: 12px; margin-left:5px;"></i></h1>
+    </div>
+
+    <div class="container">
+        
+        <header class="profile-header">
+            <div class="profile-img-container">
+                <img src="logo.png" alt="Logo Rêve de Coton" class="profile-img">
+            </div>
+
+            <div class="profile-info">
+                <div class="username-row">
+                    <span class="username">revedecoton</span>
+                    <i class="fa-solid fa-circle-check verified-badge" title="Vérifié"></i>
+                    <button class="btn-follow" style="margin-left: 20px;">S'abonner</button>
+                    <button style="margin-left: 10px; border: 1px solid #dbdbdb; background:white; padding: 5px 10px; border-radius:4px;">Message</button>
+                </div>
+
+                <ul class="stats-list">
+                    <li><strong>458</strong> publications</li>
+                    <li><strong>183 k</strong> abonnés</li>
+                    <li><strong>421</strong> abonnements</li>
+                </ul>
+
+                <div class="bio">
+                    <h2>Rêve de coton | Wedding Planner</h2>
+                    <div class="bio-text">IMAGINEZ. NOUS CRÉONS. VOUS CÉLÉBREZ. ✨
+Organisation de mariages d'exception
+Paris & Île-de-France 🇫🇷
+👇 Contact & Devis</div>
+                    <a href="https://ray104933-dot.github.io/R-ve-de-Coton-/" class="website-link">ray104933-dot.github.io/R-ve-de-Coton-/</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="1.jpg" alt="Mariage Rêve de Coton">
+            </div>
+
+            <div class="gallery-item">
+                <img src="2.jpg" alt="Décoration florale">
+            </div>
+
+            <div class="gallery-item">
+                <img src="3.jpg" alt="Cérémonie laïque">
+            </div>
+
+            <div class="gallery-item">
+                <i class="fa-solid fa-video video-icon"></i>
+                <video src="5.mp4" autoplay muted loop playsinline></video>
+            </div>
+
+            <div class="gallery-item">
+                <img src="6.jpg" alt="Détails table">
+            </div>
+
+            <div class="gallery-item">
+                <img src="7.jpg" alt="Les mariés">
+            </div>
+
+            <div class="gallery-item">
+                <i class="fa-solid fa-video video-icon"></i>
+                <video src="8.mp4" autoplay muted loop playsinline></video>
+            </div>
+
+            <div class="gallery-item">
+                <img src="9.jpg" alt="Soirée dansante">
+            </div>
+
+            <div class="gallery-item">
+                <img src="10.jpg" alt="Wedding cake">
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
