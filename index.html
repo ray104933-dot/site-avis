@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notez Rayan Guerroumi</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- STYLE CSS --- */
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --gold: #ffc107;
+            --gray: #ddd;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-color);
+            padding: 20px; /* Petit espace pour mobile */
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            width: 100%;
+            max-width: 380px;
+            padding: 35px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* --- PROFIL --- */
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            color: #fff;
+            background-image: var(--primary-gradient);
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 10px 0 5px;
+            font-weight: 700;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 25px 0;
+        }
+
+        /* --- SYSTÈME DE NOTATION --- */
+        .rating-box {
+            margin-bottom: 30px;
+        }
+
+        .rating-box p {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Les étoiles magiques */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse; /* Astuce pour sélectionner les étoiles précédentes */
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .star-rating input {
+            display: none; /* On cache les boutons radio */
+        }
+
+        .star-rating label {
+            font-size: 35px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: color 0.2s, transform 0.1s;
+            padding: 0 5px;
+        }
+
+        .star-rating label::before {
+            content: '\f005'; /* Code icône étoile FontAwesome */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        /* Quand on survole ou qu'on clique */
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: var(--gold);
+        }
+        
+        .star-rating label:active {
+            transform: scale(0.9);
+        }
+
+        /* Zone de commentaire */
+        textarea {
+            width: 100%;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+            border-radius: 10px;
+            padding: 12px;
+            font-family: inherit;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            resize: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        textarea:focus {
+            border-color: #764ba2;
+            background-color: #fff;
+        }
+
+        /* Bouton Envoyer */
+        .btn-submit {
+            background-image: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: opacity 0.3s, transform 0.2s;
+            font-size: 15px;
+        }
+
+        .btn-submit:hover { opacity: 0.9; }
+        .btn-submit:active { transform: scale(0.98); }
+
+        /* --- RESEAUX SOCIAUX --- */
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+
+        .btn:active { transform: scale(0.98); }
+        .btn i { margin-right: 10px; font-size: 18px; }
+
+        /* Couleurs des boutons */
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .facebook { background-color: #1877f2; }
+        .twitter { background-color: #000000; }
+        .website { background-color: #28a745; margin-top: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-img">
+            <i class="fa-solid fa-user-tie"></i>
+        </div>
+
+        <h1>Rayan Guerroumi</h1>
+        <p class="subtitle">Wedding Planner - Rêve de Coton</p>
+        <p class="subtitle">Telephone 07.07.07.07.07</p>
+
+        <hr>
+
+        <form action="https://formspree.io/f/TON_IDENTIFIANT_FORMSPREE_ICI" method="POST" class="rating-box">
+            <p>Avez-vous apprécié mes services ?</p>
+            
+            <div class="star-rating">
+                <input type="radio" id="star5" name="note" value="5" required/><label for="star5" title="Excellent"></label>
+                <input type="radio" id="star4" name="note" value="4" /><label for="star4" title="Très bien"></label>
+                <input type="radio" id="star3" name="note" value="3" /><label for="star3" title="Bien"></label>
+                <input type="radio" id="star2" name="note" value="2" /><label for="star2" title="Moyen"></label>
+                <input type="radio" id="star1" name="note" value="1" /><label for="star1" title="Mauvais"></label>
+            </div>
+
+            <textarea name="message" placeholder="Un commentaire pour améliorer mes services ? (Optionnel)" rows="3"></textarea>
+
+            <button type="submit" class="btn-submit">Envoyer mon avis</button>
+        </form>
+
+        <hr>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/" class="btn instagram" target="_blank">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            
+            <a href="https://www.facebook.com/" class="btn facebook" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+
+            <a href="https://twitter.com/" class="btn twitter" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i> X (Twitter)
+            </a>
+
+            <a href="https://ray104933-dot.github.io/R-ve-de-Coton-/" class="btn website" target="_blank">
+                <i class="fa-solid fa-globe"></i> Site Web Rêve de Coton
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
